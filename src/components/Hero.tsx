@@ -42,8 +42,8 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2 space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold animate-on-scroll">
-              <span className="block text-gray-800">Creative Solutions</span>
-              <span className="block text-monster-blue mt-2">for Modern Brands</span>
+              <span className="block text-gray-800">Designs that speak</span>
+              <span className="block text-monster-blue mt-2">Code that works.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 mt-6 animate-on-scroll">

@@ -15,9 +15,9 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Sarah Johnson",
-    role: "Marketing Director",
-    company: "Elevate Digital",
+    name: "Sanjeev Kumar",
+    role: "HR Manager",
+    company: "Freshworks",
     content: "Working with Monster Design Factory was an incredible experience. The logo and branding materials exceeded our expectations and perfectly captured our company's vision. Highly recommended!",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"

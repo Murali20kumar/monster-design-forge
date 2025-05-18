@@ -17,13 +17,13 @@ const ContactInfo = [
   {
     icon: <Phone className="h-6 w-6 text-monster-blue" />,
     title: "Phone",
-    content: "+1 (555) 123-4567",
-    link: "tel:+15551234567"
+    content: "+91 6380440081",
+    link: "tel:+91 6380440081"
   },
   {
     icon: <MapPin className="h-6 w-6 text-monster-blue" />,
     title: "Location",
-    content: "New York City, NY",
+    content: "Tirunelveli, TamilNadu, India",
     link: "https://maps.google.com"
   }
 ];
