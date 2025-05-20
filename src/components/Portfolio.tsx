@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface Project {
   title: string;
@@ -50,14 +51,14 @@ const projects: Project[] = [
 ];
 
 const Portfolio = () => {
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState<string>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
 
-  // Filter projects based on the active tab
-  const getFilteredProjects = (tab: string) => {
-    return tab === "all" ? projects : projects.filter(project => project.category === tab);
-  };
+  // Filter projects based on active tab
+  const filteredProjects = activeTab === "all" 
+    ? projects 
+    : projects.filter(project => project.category === activeTab);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -81,32 +82,62 @@ const Portfolio = () => {
       <div className="container mx-auto px-6 md:px-12">
         <h2 className="section-title animate-on-scroll">My Portfolio</h2>
 
-        <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full animate-on-scroll">
+        <div className="w-full animate-on-scroll">
           <div className="flex justify-center mb-12">
-            <TabsList className="bg-gray-100">
-              <TabsTrigger value="all">All Projects</TabsTrigger>
-              <TabsTrigger value="branding">Branding</TabsTrigger>
-              <TabsTrigger value="web">Web Design</TabsTrigger>
-              <TabsTrigger value="mobile">Mobile UI</TabsTrigger>
-            </TabsList>
+            <div className="inline-flex h-10 items-center justify-center rounded-md bg-gray-100 p-1">
+              <button 
+                className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${activeTab === 'all' ? 'bg-white text-foreground shadow-sm' : 'text-muted-foreground'}`}
+                onClick={() => setActiveTab('all')}>
+                All Projects
+              </button>
+              <button 
+                className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${activeTab === 'branding' ? 'bg-white text-foreground shadow-sm' : 'text-muted-foreground'}`}
+                onClick={() => setActiveTab('branding')}>
+                Branding
+              </button>
+              <button 
+                className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${activeTab === 'web' ? 'bg-white text-foreground shadow-sm' : 'text-muted-foreground'}`}
+                onClick={() => setActiveTab('web')}>
+                Web Design
+              </button>
+              <button 
+                className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${activeTab === 'mobile' ? 'bg-white text-foreground shadow-sm' : 'text-muted-foreground'}`}
+                onClick={() => setActiveTab('mobile')}>
+                Mobile UI
+              </button>
+            </div>
           </div>
 
-          <TabsContent value="all">
-            <ProjectGrid projects={getFilteredProjects("all")} setSelectedProject={setSelectedProject} />
-          </TabsContent>
-          
-          <TabsContent value="branding">
-            <ProjectGrid projects={getFilteredProjects("branding")} setSelectedProject={setSelectedProject} />
-          </TabsContent>
-          
-          <TabsContent value="web">
-            <ProjectGrid projects={getFilteredProjects("web")} setSelectedProject={setSelectedProject} />
-          </TabsContent>
-          
-          <TabsContent value="mobile">
-            <ProjectGrid projects={getFilteredProjects("mobile")} setSelectedProject={setSelectedProject} />
-          </TabsContent>
-        </Tabs>
+          {/* Project Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            {filteredProjects.length === 0 ? (
+              <p className="col-span-full text-center text-gray-500">No projects found.</p>
+            ) : (
+              filteredProjects.map((project, index) => (
+                <div
+                  key={project.title}
+                  className="animate-on-scroll group"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div
+                    className="relative overflow-hidden rounded-lg shadow-md cursor-pointer h-64"
+                    onClick={() => setSelectedProject(project)}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                      <h3 className="text-white text-xl font-semibold">{project.title}</h3>
+                      <p className="text-white/80 mt-2 capitalize">{project.category}</p>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
 
         {selectedProject && (
           <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
@@ -135,46 +166,6 @@ const Portfolio = () => {
         )}
       </div>
     </section>
-  );
-};
-
-// Project grid component to display projects
-const ProjectGrid = ({ 
-  projects, 
-  setSelectedProject 
-}: { 
-  projects: Project[], 
-  setSelectedProject: (project: Project) => void 
-}) => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.length === 0 ? (
-        <p className="col-span-full text-center text-gray-500">No projects found.</p>
-      ) : (
-        projects.map((project, index) => (
-          <div
-            key={project.title}
-            className="animate-on-scroll group"
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            <div
-              className="relative overflow-hidden rounded-lg shadow-md cursor-pointer h-64"
-              onClick={() => setSelectedProject(project)}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-white text-xl font-semibold">{project.title}</h3>
-                <p className="text-white/80 mt-2 capitalize">{project.category}</p>
-              </div>
-            </div>
-          </div>
-        ))
-      )}
-    </div>
   );
 };
 
