@@ -1,8 +1,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface Project {
   title: string;
@@ -61,6 +59,9 @@ const Portfolio = () => {
     : projects.filter(project => project.category === activeTab);
 
   useEffect(() => {
+    console.log("Active tab:", activeTab);
+    console.log("Filtered projects:", filteredProjects);
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -75,7 +76,7 @@ const Portfolio = () => {
     return () => {
       elements?.forEach((el) => observer.unobserve(el));
     };
-  }, []);
+  }, [activeTab, filteredProjects]);
 
   return (
     <section id="portfolio" ref={portfolioRef} className="section-padding bg-white">
@@ -115,7 +116,7 @@ const Portfolio = () => {
             ) : (
               filteredProjects.map((project, index) => (
                 <div
-                  key={project.title}
+                  key={`${project.title}-${index}`}
                   className="animate-on-scroll group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -127,6 +128,11 @@ const Portfolio = () => {
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.error(`Failed to load image: ${project.image}`);
+                        e.currentTarget.src = "/placeholder.svg";
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                       <h3 className="text-white text-xl font-semibold">{project.title}</h3>
@@ -153,6 +159,10 @@ const Portfolio = () => {
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   className="w-full max-h-[400px] object-contain rounded-md mb-4"
+                  onError={(e) => {
+                    console.error(`Failed to load dialog image: ${selectedProject.image}`);
+                    e.currentTarget.src = "/placeholder.svg";
+                  }}
                 />
                 <p className="text-gray-600 mb-6">{selectedProject.description}</p>
                 <div className="flex flex-wrap gap-2 mb-6">
