@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     name: "Sanjeev Kumar",
     role: "HR Manager",
     company: "Freshworks",
-    content: "Working with Monster Design Factory was an incredible experience. The logo and branding materials exceeded our expectations and perfectly captured our company's vision. Highly recommended!",
+    content: "Murali's commitment to the projects assigned and the quality of the work delivered have been commendable. He understands the client's needs easily and translates the vision into design outcomes seamlessly.",
     rating: 5,
     image: "https://muralikumar-portfolio.netlify.app/img/Sanjeev.jpeg"
   },

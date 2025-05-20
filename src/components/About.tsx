@@ -8,12 +8,12 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: "UI/UX Design", percentage: 95 },
-  { name: "Logo Design & Branding", percentage: 90 },
-  { name: "Web Development", percentage: 85 },
-  { name: "Mobile App Design", percentage: 92 },
-  { name: "Graphic Design", percentage: 88 },
-  { name: "Zoho Books Integration", percentage: 80 },
+  { name: "Logo Design", percentage: 95 },
+  { name: "Branding", percentage: 90 },
+  { name: "Web Design & Dev", percentage: 91 },
+  { name: "Mobile App UI Design", percentage: 92 },
+  { name: "Social Media Poster Design", percentage: 90 },
+  { name: "Zoho Books Invoice", percentage: 85 },
 ];
 
 const About = () => {
@@ -55,13 +55,20 @@ const About = () => {
         <div className="flex flex-col md:flex-row gap-12">
           <div className="w-full md:w-1/2 animate-on-scroll">
             <p className="text-gray-700 text-lg mb-6">
-              I'm a passionate designer and developer specializing in creating stunning visual identities and digital experiences. With over 5 years of experience in the creative industry, I've helped numerous clients transform their ideas into impactful brands.
+            I’m <b>Murali Kumar</b> — a LinkedIn Marketing Labs–certified professional in Content and Creative Design,
+             as well as a passionate designer and full-stack developer who transforms ideas into impactful digital experiences through
+              clean UI, efficient code, and smart strategy.With over 2 years of experience in the creative industry, I’ve helped startups,
+               small businesses, and solo founders bring their visions to life — from compelling brand identities to production-ready web
+                and mobile interfaces
             </p>
             <p className="text-gray-700 text-lg mb-6">
-              At Monster Design Factory, I combine artistic vision with technical expertise to deliver comprehensive design solutions tailored to your specific business needs.
+             At <b>Monster Design Factory</b>, I blend creativity with technical precision to deliver scalable, conversion-focused solutions. 
+             From mobile app UI design (React Native) and web design & dev to logo design, branding, social media creatives, and 
+             Zoho Books invoicing — I offer end-to-end services that are clean, strategic, and easy to scale.
             </p>
             <p className="text-gray-700 text-lg">
-              Whether you need a complete brand identity, a user-friendly website, or eye-catching marketing materials, I'm dedicated to creating high-quality, results-driven work that helps your business stand out.
+              My approach is collaborative, friendly, flexible, and results-driven. Whether you’re launching a new product or refining
+               your brand, I’m here to help you stand out with <b>design that speaks — code that works.</b>
             </p>
           </div>
           
