@@ -20,15 +20,15 @@ const testimonials: Testimonial[] = [
     company: "Freshworks",
     content: "Working with Monster Design Factory was an incredible experience. The logo and branding materials exceeded our expectations and perfectly captured our company's vision. Highly recommended!",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://muralikumar-portfolio.netlify.app/img/Sanjeev.jpeg"
   },
   {
-    name: "Michael Chen",
+    name: "Aakash Mayilraj",
     role: "Founder & CEO",
-    company: "TechNova Solutions",
+    company: "Aakasha Arivagam",
     content: "The website design and development were outstanding. The attention to detail and responsive approach made the whole process smooth. Our new site has already boosted our conversions significantly.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://muralikumar-portfolio.netlify.app/img/Aakash.png"
   },
   {
     name: "Jessica Williams",
