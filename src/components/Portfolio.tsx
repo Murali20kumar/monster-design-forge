@@ -1,6 +1,7 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 interface Project {
   title: string;
@@ -87,36 +88,21 @@ const Portfolio = () => {
               <TabsTrigger value="mobile">Mobile UI</TabsTrigger>
             </TabsList>
           </div>
-        </Tabs>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.length === 0 ? (
-            <p className="col-span-full text-center text-gray-500">No projects found.</p>
-          ) : (
-            filteredProjects.map((project, index) => (
-              <div
-                key={project.title}
-                className="animate-on-scroll group"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div
-                  className="relative overflow-hidden rounded-lg shadow-md cursor-pointer h-64"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <h3 className="text-white text-xl font-semibold">{project.title}</h3>
-                    <p className="text-white/80 mt-2 capitalize">{project.category}</p>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
+          {/* Add TabsContent containers for each tab value */}
+          <TabsContent value="all" className="mt-0">
+            <ProjectGrid projects={filteredProjects} setSelectedProject={setSelectedProject} />
+          </TabsContent>
+          <TabsContent value="branding" className="mt-0">
+            <ProjectGrid projects={filteredProjects} setSelectedProject={setSelectedProject} />
+          </TabsContent>
+          <TabsContent value="web" className="mt-0">
+            <ProjectGrid projects={filteredProjects} setSelectedProject={setSelectedProject} />
+          </TabsContent>
+          <TabsContent value="mobile" className="mt-0">
+            <ProjectGrid projects={filteredProjects} setSelectedProject={setSelectedProject} />
+          </TabsContent>
+        </Tabs>
 
         {selectedProject && (
           <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
@@ -145,6 +131,46 @@ const Portfolio = () => {
         )}
       </div>
     </section>
+  );
+};
+
+// Extract the project grid into a separate component for reusability
+const ProjectGrid = ({ 
+  projects, 
+  setSelectedProject 
+}: { 
+  projects: Project[], 
+  setSelectedProject: (project: Project) => void 
+}) => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.length === 0 ? (
+        <p className="col-span-full text-center text-gray-500">No projects found.</p>
+      ) : (
+        projects.map((project, index) => (
+          <div
+            key={project.title}
+            className="animate-on-scroll group"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
+            <div
+              className="relative overflow-hidden rounded-lg shadow-md cursor-pointer h-64"
+              onClick={() => setSelectedProject(project)}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <h3 className="text-white text-xl font-semibold">{project.title}</h3>
+                <p className="text-white/80 mt-2 capitalize">{project.category}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      )}
+    </div>
   );
 };
 
