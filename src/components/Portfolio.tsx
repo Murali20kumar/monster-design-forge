@@ -54,8 +54,10 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
 
-  const filteredProjects =
-    activeTab === "all" ? projects : projects.filter(project => project.category === activeTab);
+  // Filter projects based on the active tab
+  const getFilteredProjects = (tab: string) => {
+    return tab === "all" ? projects : projects.filter(project => project.category === tab);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -79,7 +81,7 @@ const Portfolio = () => {
       <div className="container mx-auto px-6 md:px-12">
         <h2 className="section-title animate-on-scroll">My Portfolio</h2>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full animate-on-scroll">
+        <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full animate-on-scroll">
           <div className="flex justify-center mb-12">
             <TabsList className="bg-gray-100">
               <TabsTrigger value="all">All Projects</TabsTrigger>
@@ -89,18 +91,20 @@ const Portfolio = () => {
             </TabsList>
           </div>
 
-          {/* Add TabsContent containers for each tab value */}
-          <TabsContent value="all" className="mt-0">
-            <ProjectGrid projects={filteredProjects} setSelectedProject={setSelectedProject} />
+          <TabsContent value="all">
+            <ProjectGrid projects={getFilteredProjects("all")} setSelectedProject={setSelectedProject} />
           </TabsContent>
-          <TabsContent value="branding" className="mt-0">
-            <ProjectGrid projects={filteredProjects} setSelectedProject={setSelectedProject} />
+          
+          <TabsContent value="branding">
+            <ProjectGrid projects={getFilteredProjects("branding")} setSelectedProject={setSelectedProject} />
           </TabsContent>
-          <TabsContent value="web" className="mt-0">
-            <ProjectGrid projects={filteredProjects} setSelectedProject={setSelectedProject} />
+          
+          <TabsContent value="web">
+            <ProjectGrid projects={getFilteredProjects("web")} setSelectedProject={setSelectedProject} />
           </TabsContent>
-          <TabsContent value="mobile" className="mt-0">
-            <ProjectGrid projects={filteredProjects} setSelectedProject={setSelectedProject} />
+          
+          <TabsContent value="mobile">
+            <ProjectGrid projects={getFilteredProjects("mobile")} setSelectedProject={setSelectedProject} />
           </TabsContent>
         </Tabs>
 
@@ -134,7 +138,7 @@ const Portfolio = () => {
   );
 };
 
-// Extract the project grid into a separate component for reusability
+// Project grid component to display projects
 const ProjectGrid = ({ 
   projects, 
   setSelectedProject 
