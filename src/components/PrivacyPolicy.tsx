@@ -1,0 +1,69 @@
+// app/privacy-policy.tsx (or pages/privacy-policy.tsx if using older Next.js)
+
+const PrivacyPolicy = () => {
+  return (
+    <main className="px-6 py-12 max-w-4xl mx-auto text-gray-800">
+      <h1 className="text-3xl font-bold mb-6">Privacy Policy for Monster Design Factory</h1>
+      <p className="mb-4 italic">Effective Date: [Insert Date]</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">Introduction</h2>
+      <p className="mb-4">
+        Monster Design Factory ("we," "our," or "us") is committed to protecting the privacy of our clients, visitors,
+        and users...
+      </p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">1. Information We Collect</h2>
+      <ul className="list-disc pl-6 mb-4">
+        <li>Full name, email address, phone number, and physical address</li>
+        <li>Company or business name</li>
+        <li>Project details, requirements, and associated files</li>
+        <li>Payment and invoicing information (via Zoho Books)</li>
+        <li>Communication history and feedback</li>
+      </ul>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">2. How We Use Your Information</h2>
+      <ul className="list-disc pl-6 mb-4">
+        <li>Provide and manage our services</li>
+        <li>Respond to inquiries and communicate project updates</li>
+        <li>Process invoices and payments securely via Zoho Books</li>
+        <li>Maintain internal records for accountability and project history</li>
+        <li>Improve service quality based on feedback and usage trends</li>
+      </ul>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">3. Information Sharing and Disclosure</h2>
+      <p className="mb-4">We do not sell or rent your personal data. We may share your information only with...</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">4. Data Security</h2>
+      <p className="mb-4">We take commercially reasonable steps to protect your data...</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">5. Cookies and Website Tracking</h2>
+      <p className="mb-4">Our website may use cookies for basic analytics and functionality...</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">6. Your Rights</h2>
+      <p className="mb-4">You have the right to...</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">7. Data Retention</h2>
+      <p className="mb-4">We retain client and project data only as long as necessary...</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">8. Third-Party Links</h2>
+      <p className="mb-4">Our website may contain links to other sites...</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">9. Children’s Privacy</h2>
+      <p className="mb-4">Our services are not intended for children under 13...</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">10. Updates to This Policy</h2>
+      <p className="mb-4">We may update this Privacy Policy from time to time...</p>
+
+      <h2 className="text-xl font-semibold mt-6 mb-2">Contact Us</h2>
+      <p className="mb-4">
+        If you have any questions about this Privacy Policy or our data practices, contact:<br />
+        Murali Kumar<br />
+        Monster Design Factory<br />
+        Email: <a href="mailto:muralitvl56@gmail.com" className="text-blue-600 underline">muralitvl56@gmail.com</a><br />
+        Location: Tirunelveli, India
+      </p>
+    </main>
+  );
+};
+
+export default PrivacyPolicy;

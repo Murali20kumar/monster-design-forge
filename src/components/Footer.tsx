@@ -19,7 +19,10 @@ const Footer = () => {
               alt="Monster Design Factory Logo"
               className="h-16 mb-2"
             />
-            <p className="text-white/80 max-w-md">
+            <span className="text-white/70 text-xs mt-1">
+              Registered under MSME, Govt. of India
+            </span>
+            <p className="text-white/80 max-w-md mt-2">
               Creating stunning designs and digital experiences that elevate your brand.
             </p>
           </div>
@@ -40,38 +43,48 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/70 text-sm">
-            © {currentYear} Monster Design Factory. All rights reserved.
-          </p>
+        {/* Legal Links */}
+        
 
-          <div className="mt-4 md:mt-0 flex space-x-4">
-  <a
-    href="https://www.behance.net/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white hover:text-[#0057ff] transition-colors"
-  >
-    <FontAwesomeIcon icon={faBehance} className="h-5 w-5" />
+        {/* Bottom Line */}
+        <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-white/70 text-sm flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+  <span>© {currentYear} Monster Design Factory. All rights reserved.</span>
+  <a href="/PrivacyPolicy" className="hover:underline hover:text-white transition-colors">
+    Privacy Policy
   </a>
-  <a
-    href="https://www.linkedin.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white hover:text-[#0057ff] transition-colors"
-  >
-    <FontAwesomeIcon icon={faLinkedin} className="h-5 w-5" />
-  </a>
-  <a
-    href="https://github.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white hover:text-[#0057ff] transition-colors"
-  >
-    <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
+  <a href="/terms-of-service" className="hover:underline hover:text-white transition-colors">
+    Terms of Service
   </a>
 </div>
 
+
+          <div className="mt-4 md:mt-0 flex space-x-4">
+            <a
+              href="https://www.behance.net/muralibeast"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white hover:text-[#0057ff] transition-colors"
+            >
+              <FontAwesomeIcon icon={faBehance} className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/murali-kumar-78b044306/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white hover:text-[#0057ff] transition-colors"
+            >
+              <FontAwesomeIcon icon={faLinkedin} className="h-5 w-5" />
+            </a>
+            <a
+              href="https://github.com/Murali20kumar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white hover:text-[#0057ff] transition-colors"
+            >
+              <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
