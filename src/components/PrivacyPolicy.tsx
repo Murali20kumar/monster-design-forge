@@ -1,3 +1,4 @@
+
 const PrivacyPolicy = () => {
   return (
     <main className="px-6 py-12 max-w-4xl mx-auto text-gray-800">
