@@ -65,6 +65,10 @@ const Footer = () => {
               className="hover:underline hover:text-white transition-colors"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('/terms-of-service', '_blank', 'noopener,noreferrer');
+              }}
             >
               Terms of Service
             </a>
