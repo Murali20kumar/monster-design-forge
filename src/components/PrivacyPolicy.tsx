@@ -1,15 +1,14 @@
-// app/privacy-policy.tsx (or pages/privacy-policy.tsx if using older Next.js)
-
 const PrivacyPolicy = () => {
   return (
     <main className="px-6 py-12 max-w-4xl mx-auto text-gray-800">
       <h1 className="text-3xl font-bold mb-6">Privacy Policy for Monster Design Factory</h1>
-      <p className="mb-4 italic">Effective Date: [Insert Date]</p>
+      <p className="mb-4 italic">Effective Date: May 21, 2025</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">Introduction</h2>
       <p className="mb-4">
         Monster Design Factory ("we," "our," or "us") is committed to protecting the privacy of our clients, visitors,
-        and users...
+        and users. This Privacy Policy outlines our practices regarding the collection, use, and disclosure of your information
+        through our website and services.
       </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">1. Information We Collect</h2>
@@ -31,28 +30,28 @@ const PrivacyPolicy = () => {
       </ul>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">3. Information Sharing and Disclosure</h2>
-      <p className="mb-4">We do not sell or rent your personal data. We may share your information only with...</p>
+      <p className="mb-4">We do not sell or rent your personal data. We may share your information only with trusted third-party service providers who assist us in operating our website and conducting our business, subject to confidentiality obligations.</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">4. Data Security</h2>
-      <p className="mb-4">We take commercially reasonable steps to protect your data...</p>
+      <p className="mb-4">We take commercially reasonable steps to protect your data from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">5. Cookies and Website Tracking</h2>
-      <p className="mb-4">Our website may use cookies for basic analytics and functionality...</p>
+      <p className="mb-4">Our website may use cookies for basic analytics and functionality. These help us understand how visitors interact with our website and allow us to improve your experience.</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">6. Your Rights</h2>
-      <p className="mb-4">You have the right to...</p>
+      <p className="mb-4">You have the right to access, correct, or delete your personal information. You may also request a copy of the data we hold about you. To exercise these rights, please contact us using the details provided below.</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">7. Data Retention</h2>
-      <p className="mb-4">We retain client and project data only as long as necessary...</p>
+      <p className="mb-4">We retain client and project data only as long as necessary to provide our services, comply with legal obligations, or resolve disputes.</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">8. Third-Party Links</h2>
-      <p className="mb-4">Our website may contain links to other sites...</p>
+      <p className="mb-4">Our website may contain links to other sites that are not operated by us. We are not responsible for the content or privacy practices of these sites and encourage you to review their privacy policies.</p>
 
-      <h2 className="text-xl font-semibold mt-6 mb-2">9. Children’s Privacy</h2>
-      <p className="mb-4">Our services are not intended for children under 13...</p>
+      <h2 className="text-xl font-semibold mt-6 mb-2">9. Children's Privacy</h2>
+      <p className="mb-4">Our services are not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">10. Updates to This Policy</h2>
-      <p className="mb-4">We may update this Privacy Policy from time to time...</p>
+      <p className="mb-4">We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the effective date.</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">Contact Us</h2>
       <p className="mb-4">
