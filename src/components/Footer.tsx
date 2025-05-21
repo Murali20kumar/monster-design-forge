@@ -60,7 +60,12 @@ const Footer = () => {
             >
               Privacy Policy
             </a>
-            <a href="/terms-of-service" className="hover:underline hover:text-white transition-colors">
+            <a 
+              href="/terms-of-service" 
+              className="hover:underline hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Terms of Service
             </a>
           </div>
