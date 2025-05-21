@@ -2,7 +2,7 @@
 const PrivacyPolicy = () => {
   return (
     <main className="px-6 py-12 max-w-4xl mx-auto text-gray-800">
-      <h1 className="text-3xl font-bold mb-6">Privacy Policy for Monster Design Factory</h1>
+     <h1 className="text-4xl font-bold mb-6 text-[#0057ff]">Privacy policy for Monster Design Factory</h1>
       <p className="mb-4 italic">Effective Date: May 21, 2025</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">Introduction</h2>

@@ -19,33 +19,33 @@ const testimonials: Testimonial[] = [
     role: "HR Manager",
     company: "Freshworks",
     content: "Murali's commitment to the projects assigned and the quality of the work delivered have been commendable. He understands the client's needs easily and translates the vision into design outcomes seamlessly.",
-    rating: 5,
+    rating: 4.5,
     image: "https://muralikumar-portfolio.netlify.app/img/Sanjeev.jpeg"
   },
   {
     name: "Aakash Mayilraj",
-    role: "Founder & CEO",
+    role: "Auditor & Founder",
     company: "Aakasha Arivagam",
     content: "The website design and development were outstanding. The attention to detail and responsive approach made the whole process smooth. Our new site has already boosted our conversions significantly.",
     rating: 5,
-    image: "https://muralikumar-portfolio.netlify.app/img/Aakash.png"
+    image: "/lovable-uploads  /Aakash.png"
   },
   {
-    name: "Jessica Williams",
-    role: "Product Manager",
-    company: "HealthWave App",
-    content: "The UI designs for our mobile app were intuitive, modern, and exactly what we needed. The process was collaborative, and revisions were handled quickly and professionally.",
-    rating: 4,
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
-  },
-  {
-    name: "David Rodriguez",
-    role: "Owner",
-    company: "Artisan Cafe",
-    content: "Our brand identity is absolutely perfect! The logo, menus, and marketing materials all work together beautifully. The attention to detail and understanding of our vision was impressive.",
+    name: "Arpitha Kumar",
+    role: "Co-founder & Social Media Manager",
+    company: "NoSwipe Dating App",
+    content: "The Web design for our dating app were intuitive, modern, and exactly what we needed. The process was collaborative, and revisions were handled quickly and professionally. Murali is such a gentle guy and intellectual one to work with.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
-  }
+    image: "/lovable-uploads/Arpitha4.jpeg"
+  },
+  // {
+  //   name: "David Rodriguez",
+  //   role: "Owner",
+  //   company: "Artisan Cafe",
+  //   content: "Our brand identity is absolutely perfect! The logo, menus, and marketing materials all work together beautifully. The attention to detail and understanding of our vision was impressive.",
+  //   rating: 5,
+  //   image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+  // }
 ];
 
 const Testimonials = () => {
