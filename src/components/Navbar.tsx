@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
@@ -32,15 +33,15 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12",
+        "fixed top-0 w-full z-50 transition-all duration-300 py-4 px-4 md:px-12",
         isScrolled 
           ? "bg-white/90 backdrop-blur-md shadow-md" 
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className="container mx-auto px-2 md:px-6 flex items-center justify-between">
         <div 
-          className="flex items-center space-x-2 cursor-pointer pl-0 md:pl-0 ml-[-12px]"
+          className="flex items-center space-x-1 md:space-x-2 cursor-pointer pl-0 md:pl-0 ml-[-6px] md:ml-[-12px]"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             location.reload(); // Optional: reload the page
@@ -49,9 +50,9 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/de51345b-424a-45d2-b9e1-4648f7d3a36a.png" 
             alt="Monster Design Factory Logo" 
-            className="h-10 md:h-14 hover:opacity-80 transition-opacity"
+            className="h-8 md:h-14 hover:opacity-80 transition-opacity"
           />
-          <span className="text-base md:text-2xl font-bold text-gray-800 whitespace-nowrap truncate max-w-[180px] sm:max-w-none">
+          <span className="text-sm md:text-2xl font-bold text-gray-800 whitespace-nowrap truncate max-w-[120px] sm:max-w-none">
             Monster Design Factory
           </span>
         </div>
