@@ -26,9 +26,9 @@ const testimonials: Testimonial[] = [
     name: "Aakash Mayilraj",
     role: "Auditor & Founder",
     company: "Aakasha Arivagam",
-    content: "The website design and development were outstanding. The attention to detail and responsive approach made the whole process smooth. Our new site has already boosted our conversions significantly.",
+    content: "The website design and dev is awesome. The attention to detail and responsive approach made the whole process smooth. Our new site has already boosted our conversions significantly.",
     rating: 5,
-    image: "/lovable-uploads  /Aakash.png"
+    image: "/lovable-uploads/Aakash.png"
   },
   {
     name: "Arpitha Kumar",
