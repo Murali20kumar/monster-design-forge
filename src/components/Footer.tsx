@@ -21,7 +21,7 @@ const Footer = () => {
               alt="Monster Design Factory Logo"
               className="h-16 mb-2"
             />
-            <span className="text-white/70 text-xs mt-1">
+            <span className="text-white/70 text-xs mt-1 whitespace-nowrap">
               Registered under MSME, Govt. of India
             </span>
             <p className="text-white/80 max-w-md mt-2">
@@ -45,35 +45,23 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Legal Links */}
-        
-
         {/* Bottom Line */}
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-white/70 text-sm flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
             <span>© {currentYear} Monster Design Factory. All rights reserved.</span>
-            <a 
-              href="/privacy-policy" 
+            <Link 
+              to="/privacy-policy" 
               className="hover:underline hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Privacy Policy
-            </a>
-            <a 
-              href="/terms-of-service" 
+            </Link>
+            <Link 
+              to="/terms-of-service" 
               className="hover:underline hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open('/terms-of-service', '_blank', 'noopener,noreferrer');
-              }}
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
-
 
           <div className="mt-4 md:mt-0 flex space-x-4">
             <a
