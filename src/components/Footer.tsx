@@ -49,26 +49,18 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-white/70 text-sm flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
             <span>© {currentYear} Monster Design Factory. All rights reserved.</span>
-            <a 
-              href="/privacy-policy" 
+            <Link 
+              to="/privacy-policy" 
               className="hover:underline hover:text-white transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open('/privacy-policy', '_blank', 'noopener,noreferrer');
-              }}
             >
               Privacy Policy
-            </a>
-            <a 
-              href="/terms-of-service" 
+            </Link>
+            <Link 
+              to="/terms-of-service" 
               className="hover:underline hover:text-white transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open('/terms-of-service', '_blank', 'noopener,noreferrer');
-              }}
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
 
           <div className="mt-4 md:mt-0 flex space-x-4">
