@@ -52,7 +52,7 @@ const Navbar = () => {
             alt="Monster Design Factory Logo" 
             className="h-8 md:h-14 hover:opacity-80 transition-opacity"
           />
-          <span className="text-sm md:text-2xl font-bold text-gray-800 whitespace-nowrap truncate max-w-[120px] sm:max-w-none">
+          <span className="text-sm md:text-2xl font-bold text-gray-800 whitespace-nowrap">
             Monster Design Factory
           </span>
         </div>
