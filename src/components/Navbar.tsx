@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
@@ -39,24 +38,23 @@ const Navbar = () => {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex items-center justify-between">
-       <div 
-  className="flex items-center space-x-3 cursor-pointer"
-  onClick={() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    location.reload(); // Optional: reload the page
-  }}
->
-  <img 
-    src="/lovable-uploads/de51345b-424a-45d2-b9e1-4648f7d3a36a.png" 
-    alt="Monster Design Factory Logo" 
-    className="h-10 md:h-12 hover:opacity-80 transition-opacity"
-  />
-  <span className="text-lg md:text-xl font-bold text-gray-800">
-    Monster Design Factory
-  </span>
-</div>
-
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <div 
+          className="flex items-center space-x-2 cursor-pointer pl-0 md:pl-0 ml-[-12px]"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            location.reload(); // Optional: reload the page
+          }}
+        >
+          <img 
+            src="/lovable-uploads/de51345b-424a-45d2-b9e1-4648f7d3a36a.png" 
+            alt="Monster Design Factory Logo" 
+            className="h-10 md:h-14 hover:opacity-80 transition-opacity"
+          />
+          <span className="text-base md:text-2xl font-bold text-gray-800 whitespace-nowrap truncate max-w-[180px] sm:max-w-none">
+            Monster Design Factory
+          </span>
+        </div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6">
