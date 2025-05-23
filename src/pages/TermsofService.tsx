@@ -1,5 +1,5 @@
 
-import TermsOfService from "@/components/TermsofService";
+import TermsOfService from "@/components/TermsOfService";
 
 const TermsOfServicePage = () => {
   return (
