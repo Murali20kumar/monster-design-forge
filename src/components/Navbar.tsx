@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
@@ -41,7 +40,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
        <div 
-  className="flex items-center space-x-3 cursor-pointer"
+  className="flex items-center space-x-3 cursor-pointer whitespace-nowrap"
   onClick={() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     location.reload(); // Optional: reload the page
@@ -52,11 +51,10 @@ const Navbar = () => {
     alt="Monster Design Factory Logo" 
     className="h-10 md:h-12 hover:opacity-80 transition-opacity"
   />
-  <span className="text-lg md:text-xl font-bold text-gray-800">
+  <span className="text-lg md:text-xl font-bold text-gray-800 whitespace-nowrap">
     Monster Design Factory
   </span>
 </div>
-
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6">
